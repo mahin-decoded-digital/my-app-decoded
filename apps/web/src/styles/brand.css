@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap');
-
 :root {
-  --paper: hsl(42, 28%, 94%);
-  --ink: hsl(30, 8%, 14%);
-  --ink-muted: hsl(30, 4%, 42%);
-  --rule: hsl(30, 8%, 72%);
-  --font-display: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
-  --font-sub: 'Jost', system-ui, sans-serif;
-}
-
-html, body {
-  background-color: var(--paper);
-  color: var(--ink);
+  --canvas-deep: hsl(230, 35%, 7%);
+  --canvas-mid: hsl(240, 30%, 11%);
+  --orb-primary: hsl(217, 91%, 55%);
+  --orb-accent: hsl(262, 83%, 60%);
+  --glass-bg: hsla(230, 40%, 20%, 0.35);
+  --glass-border: hsla(217, 91%, 70%, 0.28);
+  --neon-primary: hsla(217, 91%, 65%, 0.7);
+  --neon-accent: hsla(262, 83%, 70%, 0.55);
+  --neon-glow: 0 0 0 1px var(--glass-border),
+               0 0 24px 2px var(--neon-primary),
+               0 0 48px 6px var(--neon-accent);
+  --glass-shadow: 0 8px 32px 0 hsla(217, 91%, 10%, 0.55);
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }

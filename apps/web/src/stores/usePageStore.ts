@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 
 interface PageState {
-  heading: string;
-  subheading: string;
-  setHeading: (heading: string) => void;
+  message: string;
+  loaded: boolean;
+  setMessage: (message: string) => void;
 }
 
 export const usePageStore = create<PageState>()((set) => ({
-  heading: '',
-  subheading: '',
-  setHeading: (heading: string) => set({ heading }),
+  message: "Hello, World!",
+  loaded: true,
+  setMessage: (message: string) => set({ message }),
 }));

@@ -1,6 +1,5 @@
-export interface Page {
+export interface PageVisit {
   id: string;
-  heading: string;
-  subheading: string;
   createdAt: Date;
+  message: string;
 }
