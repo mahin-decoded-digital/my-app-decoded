@@ -1,162 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
 :root {
-  --aurora-1: hsl(217, 91%, 55%);
-  --aurora-2: hsl(262, 83%, 60%);
-  --aurora-3: hsl(190, 80%, 60%);
-  --aurora-4: hsl(240, 70%, 65%);
-  --text-glow-low: 0 0 20px hsla(217, 91%, 70%, 0.4);
-  --text-glow-medium: 0 0 30px hsla(217, 91%, 70%, 0.65), 0 0 60px hsla(262, 83%, 70%, 0.35);
-  --text-glow-high: 0 0 40px hsla(217, 91%, 70%, 0.9), 0 0 80px hsla(262, 83%, 70%, 0.6), 0 0 120px hsla(190, 80%, 70%, 0.3);
-  --canvas-bg: hsl(230, 40%, 6%);
-  --frosted-bg: hsla(230, 40%, 12%, 0.55);
-  --frosted-border: hsla(217, 80%, 70%, 0.18);
-  --font-display: 'Syne', system-ui, sans-serif;
+  --cream: #f5f0e8;
+  --cream-deep: #ede8dc;
+  --ink: #111009;
+  --ink-mid: #2e2b25;
+  --ink-light: #5c5849;
+  --rule: #c8c2b4;
+  --rule-light: #ddd8ce;
+  --serif-display: 'Cormorant Garamond', Georgia, serif;
+  --sans-body: 'DM Sans', system-ui, sans-serif;
+  --ease-editorial: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --letter-wide: 0.12em;
+  --letter-xtight: -0.03em;
 }
 
-@keyframes aurora-blob-1 {
-  0%, 100% { transform: translate(0%, 0%) scale(1); }
-  33% { transform: translate(8%, -12%) scale(1.12); }
-  66% { transform: translate(-6%, 8%) scale(0.94); }
-}
-
-@keyframes aurora-blob-2 {
-  0%, 100% { transform: translate(0%, 0%) scale(1); }
-  33% { transform: translate(-10%, 8%) scale(0.9); }
-  66% { transform: translate(6%, -10%) scale(1.15); }
-}
-
-@keyframes aurora-blob-3 {
-  0%, 100% { transform: translate(0%, 0%) scale(1); }
-  50% { transform: translate(12%, 6%) scale(1.08); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
-}
-
-@keyframes float-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.aurora-canvas {
-  position: fixed;
-  inset: 0;
-  background-color: var(--canvas-bg);
-  overflow: hidden;
-  z-index: 0;
-}
-
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  mix-blend-mode: screen;
-  will-change: transform;
-  transition: filter 0.6s ease, opacity 0.6s ease;
-}
-
-.aurora-blob-1 {
-  width: 70vw;
-  height: 60vh;
-  top: -10%;
-  left: -10%;
-  background: radial-gradient(ellipse at center, hsla(217, 91%, 55%, 0.55) 0%, transparent 70%);
-  filter: blur(72px);
-  animation: aurora-blob-1 18s ease-in-out infinite;
-}
-
-.aurora-blob-2 {
-  width: 65vw;
-  height: 65vh;
-  bottom: -15%;
-  right: -10%;
-  background: radial-gradient(ellipse at center, hsla(262, 83%, 60%, 0.5) 0%, transparent 70%);
-  filter: blur(72px);
-  animation: aurora-blob-2 22s ease-in-out infinite;
-}
-
-.aurora-blob-3 {
-  width: 50vw;
-  height: 50vh;
-  top: 30%;
-  left: 30%;
-  background: radial-gradient(ellipse at center, hsla(190, 80%, 60%, 0.35) 0%, transparent 70%);
-  filter: blur(72px);
-  animation: aurora-blob-3 26s ease-in-out infinite;
-}
-
-.aurora-blob-4 {
-  width: 40vw;
-  height: 40vh;
-  top: 0%;
-  right: 10%;
-  background: radial-gradient(ellipse at center, hsla(240, 70%, 65%, 0.4) 0%, transparent 70%);
-  filter: blur(72px);
-  animation: aurora-blob-1 20s ease-in-out infinite reverse;
-}
-
-/* Intensity modifiers */
-.aurora-low .aurora-blob {
-  filter: blur(100px);
-  opacity: 0.55;
-}
-
-.aurora-medium .aurora-blob {
-  filter: blur(72px);
-  opacity: 0.85;
-}
-
-.aurora-high .aurora-blob {
-  filter: blur(52px);
-  opacity: 1;
-}
-
-/* Frosted glass card */
-.frosted-card {
-  background: var(--frosted-bg);
-  border: 1px solid var(--frosted-border);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-}
-
-/* Text glow classes */
-.text-aurora-glow-low {
-  text-shadow: var(--text-glow-low);
-}
-.text-aurora-glow-medium {
-  text-shadow: var(--text-glow-medium);
-}
-.text-aurora-glow-high {
-  text-shadow: var(--text-glow-high);
-}
-
-/* Badge pulse */
-.badge-glow {
-  box-shadow: 0 0 12px 2px hsla(262, 83%, 60%, 0.45);
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Entry animations */
-.animate-float-in {
-  animation: float-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.animate-float-in-delay-1 {
-  animation: float-in 0.9s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.animate-float-in-delay-2 {
-  animation: float-in 0.9s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.animate-float-in-delay-3 {
-  animation: float-in 0.9s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-/* Display font */
-.font-display {
-  font-family: var(--font-display);
+.dark {
+  --cream: #1a1814;
+  --cream-deep: #141210;
+  --ink: #f0ebe0;
+  --ink-mid: #d6d0c4;
+  --ink-light: #9c9589;
+  --rule: #3a3630;
+  --rule-light: #2a2622;
 }
