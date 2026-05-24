@@ -1,5 +1,5 @@
-export interface PageVisit {
+export interface Greeting {
   id: string;
-  createdAt: Date;
   message: string;
+  createdAt: Date;
 }
