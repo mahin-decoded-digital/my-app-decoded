@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap');
+
+:root {
+  --paper: hsl(42, 28%, 94%);
+  --ink: hsl(30, 8%, 14%);
+  --ink-muted: hsl(30, 4%, 42%);
+  --rule: hsl(30, 8%, 72%);
+  --font-display: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+  --font-sub: 'Jost', system-ui, sans-serif;
+}
+
+html, body {
+  background-color: var(--paper);
+  color: var(--ink);
+}
